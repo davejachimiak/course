@@ -92,11 +92,8 @@ product list = foldLeft (\acc x -> acc * x) 1 list
 -- 10
 --
 -- prop> foldLeft (-) (sum x) x == 0
-sum ::
-  List Int
-  -> Int
-sum =
-  error "todo"
+sum :: List Int -> Int
+sum list = foldLeft (\acc x -> acc + x) 0 list
 
 -- | Return the length of the list.
 --
