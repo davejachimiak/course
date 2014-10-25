@@ -130,8 +130,10 @@ filter ::
   (a -> Bool)
   -> List a
   -> List a
-filter =
-  error "todo"
+filter _ Nil = Nil
+filter f (h :. t) = case f h of
+    True -> h :. filter f t
+    False -> filter f t
 
 -- | Append two lists to a new list.
 --
