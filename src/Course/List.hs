@@ -151,8 +151,9 @@ filter f (h :. t) = case f h of
   List a
   -> List a
   -> List a
-(++) =
-  error "todo"
+(++) x Nil = x
+(++) Nil y = y
+(++) (h :. t) y = h :. (++) t y
 
 infixr 5 ++
 
